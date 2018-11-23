@@ -1,0 +1,16 @@
+<!-- (dayClick)="dayClick($event.detail)" -->
+<!-- (clickButton)="clickButton($event.detail)" -->
+<!-- (eventClick)="eventClick($event.detail)" -->
+<!-- (eventDrop)="updateEvent($event.detail)" -->
+<!-- (eventResize)="updateEvent($event.detail)" -->
+
+<div *ngIf="calendarOptions">
+    <ng-fullcalendar #ucCalendar [options]="calendarOptions" [(eventsModel)]="events"></ng-fullcalendar>
+</div>
+
+<p>Display event : {{displayEvent | json}}</p>
+<a (click)="loadevents()"> loadevents</a>
+
+<div *ngFor="let item of events">
+    <p>出席率 : {{ item | json }}</p>
+</div>

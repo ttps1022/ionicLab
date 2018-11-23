@@ -1,0 +1,21 @@
+<ion-content padding>
+  
+  <ion-segment [(ngModel)]="page">
+    <ion-segment-button [value]="PageType.Month"    (click)="test($event)" > 每月參與紀錄 </ion-segment-button>
+    <ion-segment-button [value]="PageType.HalfYear" (click)="test($event)"> 半年參與率 </ion-segment-button>
+    <ion-segment-button [value]="PageType.Year"     (click)="test($event)"> 年度免參與日 </ion-segment-button>
+  </ion-segment>
+
+  <ng-container *ngIf="page === PageType.Month">
+    <app-participation-rate-month></app-participation-rate-month>
+  </ng-container>
+
+  <ng-container *ngIf="page === PageType.HalfYear">
+    <app-participation-rate-half-year></app-participation-rate-half-year>
+  </ng-container>
+
+  <ng-container *ngIf="page === PageType.Year">
+    <app-participation-rate-year></app-participation-rate-year>
+  </ng-container>
+  
+  </ion-content>
